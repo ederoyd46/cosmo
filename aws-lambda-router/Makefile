@@ -11,6 +11,9 @@ COMMIT?=$(shell git rev-parse HEAD)
 build:
 	CGO_ENABLED=0 go build -trimpath -ldflags "-extldflags -static -X github.com/wundergraph/cosmo/aws-lambda-router/internal.Version=$(VERSION) -X github.com/wundergraph/cosmo/aws-lambda-router/internal.Date=$(DATE) -X github.com/wundergraph/cosmo/aws-lambda-router/internal.Commit=$(COMMIT)" -a -o bootstrap cmd/main.go
 
+build-linux:
+	GOOS='linux' CGO_ENABLED=0 go build -trimpath -ldflags "-extldflags -static -X github.com/wundergraph/cosmo/aws-lambda-router/internal.Version=$(VERSION) -X github.com/wundergraph/cosmo/aws-lambda-router/internal.Date=$(DATE) -X github.com/wundergraph/cosmo/aws-lambda-router/internal.Commit=$(COMMIT)" -a -o bootstrap cmd/main.go
+
 build-sam:
 	rm -rf .aws-sam && sam build --parallel && cp router.json .aws-sam/build/Api/router.json
 
