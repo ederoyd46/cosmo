@@ -1,3 +1,8 @@
+# NOTE!!
+This is a temporary repository until issue https://github.com/wundergraph/cosmo/issues/904 is resolved.
+
+
+
 <p align="center">
 <img width="350" src="./docs/assets/logo.png"/>
 </p>
