@@ -11,8 +11,6 @@ import (
 	"sync"
 	"time"
 
-	"github.com/wundergraph/cosmo/router/pkg/logging"
-
 	"github.com/cloudflare/backoff"
 	"github.com/dgraph-io/ristretto"
 	"github.com/go-chi/chi/v5"
